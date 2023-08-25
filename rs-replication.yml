@@ -19,4 +19,4 @@ spec:
   replicas: 3
   selector:
       matchLabels:
-        type: frontend
+        name: pod-service-nginx
