@@ -3,8 +3,8 @@ kind: ReplicationController
 metadata:
   name: myapp-controller
   labels:
-      app: myapp
-      type: frontend
+    app: myapp
+    type: frontend
 spec:
   template:
     metadata:
@@ -14,6 +14,5 @@ spec:
         type: frontend
     spec:
       containers:
-      - name: nginx-container
-        images: nginx
-
+        - name: nginx-container
+          images: nginx
