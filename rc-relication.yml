@@ -5,10 +5,16 @@ metadata:
   labels:
     name: myapp-pod-monitor
 spec:
-  containers:
-  - name: prometheus
-    image: ubuntu/prometheus
-  - name: grafana
-    image: grafana/grafana
+  template:
+    metadata:
+      name: myapp
+      labels:
+        name: myapp-pod-monitor
+    spec:
+      containers:
+      - name: prometheus
+        image: ubuntu/prometheus
+      - name: grafana
+        image: grafana/grafana
           
   replicas: 3
