@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: replacaset-nginx-systems
@@ -15,3 +15,8 @@ spec:
         containers:
         - name: nginx
           image: nginx
+
+  replicas: 3
+  selector:
+      matchLabels:
+        type: frontend
