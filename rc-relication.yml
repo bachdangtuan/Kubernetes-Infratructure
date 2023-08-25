@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: myapp
+  name: replication-monitor-systems
   labels:
-    name: myapp-pod-monitor
+    name: replication-monitor-systems
 spec:
   template:
     metadata:
-      name: myapp
+      name: pod-monitor-systems
       labels:
-        name: myapp-pod-monitor
+        name: pod-monitor-systems
     spec:
       containers:
       - name: prometheus
