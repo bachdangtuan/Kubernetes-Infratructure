@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: myapp-deployment
-  type: front-end
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: myapp-product
@@ -15,13 +15,3 @@ spec:
       containers:
       - name: nginx-container
         image: nginx
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
-        ports:
-        - containerPort: 80
-replicas: 3
-selector:
-  matchLabels:
-    type: front-end
