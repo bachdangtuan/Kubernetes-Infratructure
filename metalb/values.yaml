@@ -1,0 +1,6 @@
+configInline:
+  address-pools:
+    - name: default
+      protocol: layer2
+      addresses:
+        - 10.0.50.137-10.0.50.140
