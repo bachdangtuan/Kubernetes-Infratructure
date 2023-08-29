@@ -6,7 +6,5 @@ metadata:
     name: myapp-pod-monitor
 spec:
   containers:
-  - name: prometheus
-    image: ubuntu/prometheus
-  - name: grafana
-    image: grafana/grafana
+  - name: nginx
+    image: nginx
