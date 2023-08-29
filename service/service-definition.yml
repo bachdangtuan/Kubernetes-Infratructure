@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: nginx-service-port
 spec:
-  selector:
-    app: myapp
-    type: front-end
   ports:
   - port: 80
     targetPort: 80
     nodePort: 30008
+  selector:
+    app: myapp
+    type: front-end
