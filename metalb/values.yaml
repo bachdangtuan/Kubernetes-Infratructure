@@ -1,6 +1,0 @@
-config:
-  address-pools:
-    - name: default
-      protocol: layer2
-      addresses:
-        - 10.0.0.132-10.0.0.135
