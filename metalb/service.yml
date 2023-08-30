@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: kube-demo-lb
+
 ---
 
 apiVersion: apps/v1
@@ -10,27 +11,27 @@ metadata:
   name: replacaset-nginx-systems
   namespace: kube-demo-lb
   labels:
-      app: replacaset-nginx-systems
-      type: frontend
+    app: replacaset-nginx-systems
+    type: frontend
 spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: replacaset-nginx-systems
   template:
-      metadata:
-        name: pod-service-nginx
-        labels:
-          name: pod-service-nginx
-      spec:
-        containers:
+    metadata:
+      labels:
+        app: replacaset-nginx-systems
+        type: frontend
+    spec:
+      containers:
         - name: nginx
           image: nginx
           ports:
-          - containerPort: 80
-          
-  replicas: 3
-  selector:
-      matchLabels:
-        name: pod-service-nginx
+            - containerPort: 80
 
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
