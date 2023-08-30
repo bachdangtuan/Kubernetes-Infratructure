@@ -23,7 +23,7 @@ spec:
         app: kube-demo-lb
     spec:
       containers:
-      - name: bachdangtuan/giaiphuongtrinh
+      - name: bachdangtuan-giaiphuongtrinh
         image: bachdangtuan/golang-giaiphuongtrinh:latest
         ports:
         - containerPort: 80
