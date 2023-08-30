@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replacaset-nginx-systems
+  namespace: kube-demo-lb
+  labels:
+      app: replacaset-nginx-systems
+      type: frontend
+spec:
+  template:
+      metadata:
+        name: pod-service-nginx
+        labels:
+          name: pod-service-nginx
+      spec:
+        containers:
+        - name: nginx
+          image: nginx
+          ports:
+          - containerPort: 80
+          
+  replicas: 3
+  selector:
+      matchLabels:
+        name: pod-service-nginx
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: replacaset-nginx-systems
+  namespace: kube-demo-lb
+spec:
+  selector:
+    app: replacaset-nginx-systems
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
